@@ -88,3 +88,4 @@ npm test
 - AST-level semantic merging is currently heuristic-oriented and language-agnostic.
 - YAML deterministic merging currently supports flat key-value maps only.
 - Suggested partial resolutions are summarized in PR comments; patch suggestion comments can be added next.
+

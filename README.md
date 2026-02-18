@@ -1,3 +1,5 @@
+MAIN VERSION
+
 # Zero-Friction Safe Git Merge Conflict Autopilot
 
 some change test ding dong

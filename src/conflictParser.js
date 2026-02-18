@@ -4,6 +4,9 @@ export function parseConflictFile(content) {
   const normalized = content.replace(/\r\n/g, "\n");
   const trailingNewline = normalized.endsWith("\n");
   const lines = splitLines(normalized);
+  if (trailingNewline && lines.length > 0 && lines[lines.length - 1] === "") {
+    lines.pop();
+  }
   const segments = [];
   const conflicts = [];
   let textBuffer = [];
@@ -118,4 +121,3 @@ export function renderResolvedSegments(segments, trailingNewline = true) {
   }
   return `${rendered}\n`;
 }
-

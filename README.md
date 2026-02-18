@@ -1,5 +1,7 @@
 # Zero-Friction Safe Git Merge Conflict Autopilot
 
+some change test ding dong
+
 A GitHub-native merge conflict resolver focused on safety, determinism, and low developer friction.
 
 ## What It Does

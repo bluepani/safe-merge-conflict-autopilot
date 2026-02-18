@@ -1,0 +1,52 @@
+name: "Safe Merge Conflict Autopilot"
+description: "Deterministic-first merge conflict resolver with validation and confidence gating."
+author: "Zero-Friction Autopilot"
+inputs:
+  github-token:
+    description: "GitHub token used for cloning, comments, and optional push."
+    required: true
+  auto-apply:
+    description: "Apply and push automatic resolutions when confidence threshold and validation gates pass."
+    required: false
+    default: "true"
+  confidence-threshold:
+    description: "Minimum confidence required for auto-apply."
+    required: false
+    default: "0.85"
+  formatter-command:
+    description: "Formatter command to run after merge resolution."
+    required: false
+    default: ""
+  linter-command:
+    description: "Linter command to run after merge resolution."
+    required: false
+    default: ""
+  typecheck-command:
+    description: "Typecheck or build command to run after merge resolution."
+    required: false
+    default: ""
+  test-command:
+    description: "Test command to run after merge resolution."
+    required: false
+    default: ""
+  enable-ai:
+    description: "Enable AI fallback for unresolved conflict chunks."
+    required: false
+    default: "false"
+  openai-api-key:
+    description: "OpenAI API key used only when enable-ai=true."
+    required: false
+    default: ""
+  ai-model:
+    description: "AI model name for fallback conflict resolution."
+    required: false
+    default: "gpt-4.1-mini"
+outputs:
+  confidence:
+    description: "Final confidence score for the proposed merge resolution."
+  auto-applied:
+    description: "Whether changes were committed and pushed automatically."
+runs:
+  using: "node20"
+  main: "src/index.js"
+

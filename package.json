@@ -1,0 +1,14 @@
+{
+  "name": "safe-merge-conflict-autopilot",
+  "version": "0.1.0",
+  "description": "GitHub-native merge conflict autopilot with deterministic-first safety controls.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
+

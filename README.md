@@ -1,3 +1,5 @@
+PR VERSION
+
 # Zero-Friction Safe Git Merge Conflict Autopilot
 
 A GitHub-native merge conflict resolver focused on safety, determinism, and low developer friction.

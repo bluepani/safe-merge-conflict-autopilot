@@ -25,13 +25,15 @@ import { buildSummaryComment } from "./summary.js";
 import { round, toBoolean, toNumber } from "./utils.js";
 
 function getInput(name, fallback = "") {
-  const key = `INPUT_${name.toUpperCase().replace(/[-\s]/g, "_")}`;
-  const value = process.env[key];
-  if (value == null || value === "") {
-    return fallback;
-  }
+  const raw = `INPUT_${name.toUpperCase()}`; // keeps hyphens
+  const normalized = `INPUT_${name.toUpperCase().replace(/[-\s]/g, "_")}`; // underscores
+
+  const value = process.env[raw] ?? process.env[normalized];
+
+  if (value == null || value === "") return fallback;
   return value;
 }
+
 
 function setOutput(name, value) {
   const outputPath = process.env.GITHUB_OUTPUT;

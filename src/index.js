@@ -27,9 +27,7 @@ import { round, toBoolean, toNumber } from "./utils.js";
 function getInput(name, fallback = "") {
   const raw = `INPUT_${name.toUpperCase()}`; // keeps hyphens
   const normalized = `INPUT_${name.toUpperCase().replace(/[-\s]/g, "_")}`; // underscores
-
   const value = process.env[raw] ?? process.env[normalized];
-
   if (value == null || value === "") return fallback;
   return value;
 }
